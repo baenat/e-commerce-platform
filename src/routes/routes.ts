@@ -7,7 +7,7 @@ const routerApp = (app: Express) => {
 
   const router = express.Router();
 
-  app.use('/api', router);
+  app.use(`/api/v${process.env.APP_VERSION}`, router);
 
   router.use('/products', productRoutes);
   router.use('/orders', orderRoutes);

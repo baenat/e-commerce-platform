@@ -4,16 +4,25 @@ import handlerHttpError from '../utils/handlerHttpError';
 
 export const getAllProducts = async (req: Request, res: Response) => {
   const products = await Product.find();
-  console.log({products})
+  res.json(products);
+};
+
+export const getBestSellers = async (req: Request, res: Response) => {
+  const products = (await Product.aggregate([{ $sample: { size: 4 } }]).exec()).map(product => {
+    const formattedProduct = {
+      ...product,
+      id: product._id,
+    };
+    delete formattedProduct._id;
+    return formattedProduct;
+  });
   res.json(products);
 };
 
 export const getProduct = async (req: Request, res: Response) => {
 
   try {
-    console.log(req.params.id)
     const product = await Product.findById(req.params.id);
-    console.log({product})
     if (product) {
       res.json(product);
     } else {

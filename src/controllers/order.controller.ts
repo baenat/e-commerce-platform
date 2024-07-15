@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import { Order } from './../models/order.model';
+import { Product } from './../models/product.model';
 import handlerHttpError from '../utils/handlerHttpError';
 
 export const getAllOrders = async (req: Request, res: Response) => {
@@ -11,11 +12,18 @@ export const getOrder = async (req: Request, res: Response) => {
 
   try {
     const order = await Order.findById(req.params.id);
-    if (order) {
-      res.json(order);
+    const productsDetails = await Product.find({ _id: { $in: order?.productsId } });  // Obtener detalles completos de los productos asociados
+    const bodyResponse = {
+      order: order,
+      products: productsDetails
+    }
+
+    if (order && productsDetails) {
+      res.json(bodyResponse);
     } else {
       res.status(404).json({ message: 'Order not found' });
     }
+
   } catch (error) {
     handlerHttpError(res, `Error: getOrder ${error}`);
   }
