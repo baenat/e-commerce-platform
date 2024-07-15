@@ -29,24 +29,36 @@ export const getProduct = async (req: Request, res: Response) => {
       res.status(404).json({ message: 'Product not found' });
     }
   } catch (error) {
-    handlerHttpError(res, `Error: getProduct ${error}`);
+    handlerHttpError(res, error as Error);
   }
 
 };
 
 export const createProduct = async (req: Request, res: Response) => {
-  const newProduct = new Product(req.body);
-  await newProduct.save();
-  res.status(201).json(newProduct);
+
+  try {
+    const newProduct = new Product(req.body);
+    await newProduct.save();
+    res.status(201).json(newProduct);
+  } catch (error) {
+    handlerHttpError(res, error as Error);
+  }
+
 };
 
 export const updateProduct = async (req: Request, res: Response) => {
-  const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  if (product) {
-    res.json(product);
-  } else {
-    res.status(404).json({ message: 'Product not found' });
+
+  try {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (product) {
+      res.json(product);
+    } else {
+      res.status(404).json({ message: 'Product not found' });
+    }
+  } catch (error) {
+    handlerHttpError(res, error as Error);
   }
+
 };
 
 export const deleteProduct = async (req: Request, res: Response) => {

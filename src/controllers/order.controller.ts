@@ -25,7 +25,7 @@ export const getOrder = async (req: Request, res: Response) => {
     }
 
   } catch (error) {
-    handlerHttpError(res, `Error: getOrder ${error}`);
+    handlerHttpError(res, error as Error);
   }
 
 };

@@ -7,7 +7,7 @@ const productSchema = new Schema(
     quantity: { type: Number, required: true },
     images: { type: Array<string>, required: true },
     price: { type: Number, required: true },
-    salePrice: { type: Number, required: false },
+    salePrice: { type: Number, required: true },
   },
   {
     /* createdAt, updatedAt */
