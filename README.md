@@ -4,17 +4,11 @@
 
 <img alt="ReactJS" src="cart.png" width="100" /><br>
 
-
-![Sveltekit](https://img.shields.io/badge/SvelteKit-FF3E00?style=for-the-badge&logo=Svelte&logoColor=white)
-![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Tailwindcss](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![GIT](https://img.shields.io/badge/Git-fc6d26?style=for-the-badge&logo=git&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
-
 ![Node](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![ExpressJs](https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white)
 ![MongoBD](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![GIT](https://img.shields.io/badge/Git-fc6d26?style=for-the-badge&logo=git&logoColor=white)
 
 </div><br>
 
@@ -29,6 +23,7 @@ E-commerce Platform es una aplicación web de comercio electrónico que permite 
 - [Instalación](#instalación)
 - [Uso](#uso)
 - [API REST](#api-rest)
+- [Frontend](https://github.com/baenat/e-commerce-platform-front)
 
 ## Características
 
@@ -38,11 +33,6 @@ E-commerce Platform es una aplicación web de comercio electrónico que permite 
 - **Gestión de Órdenes**: Realiza y administra pedidos.
 
 ## Tecnologías Utilizadas
-
-### Frontend
-- **Framework**: SvelteKit
-- **Lenguaje**: TypeScript
-- **Estilos**: TailwindCSS
 
 ### Backend
 - **Servidor**: Node.js con Express
@@ -65,13 +55,6 @@ cd e-commerce-platform
 
 ### Instalación de Dependencias
 
-#### Frontend
-
-```sh
-cd frontend
-npm install
-```
-
 #### Backend
 
 ```sh
@@ -80,15 +63,6 @@ npm install
 ```
 
 ## Uso
-
-### Frontend
-
-```sh
-cd frontend
-npm run dev
-```
-
-El frontend estará disponible en `http://localhost:5174`.
 
 ### Backend
 
