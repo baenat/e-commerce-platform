@@ -1,5 +1,5 @@
-import express, { Express, Request, Response } from "express";
-import dotenv from "dotenv";
+import express, { Express } from 'express';
+import dotenv from 'dotenv';
 import cors from 'cors'
 import dbConnect from './database/database';
 import routerApp from "./routes/routes";
